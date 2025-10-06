@@ -1,0 +1,66 @@
+### 기본 / 빌드 산출물 ###
+HELP.md
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### OS 공통 ###
+.DS_Store
+Thumbs.db
+
+### 로그 / 임시 파일 ###
+*.log
+*.tmp
+*.bak
+*.swp
+logs/
+
+### Spring Boot / 환경 ###
+*.env                # 환경변수 파일 (DB, API 키 등)
+application.yaml
+application-dev.yaml
+*.db
+*.h2.db
+
+### STS (Spring Tool Suite) ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Maven Wrapper ###
+.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+
+### 기타 / 백업 / 병합 ###
+*.orig
+*.rej
