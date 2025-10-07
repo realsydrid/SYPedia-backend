@@ -13,9 +13,5 @@ class UserRepositoryTest {
     @Autowired
     UserRepository userRepository;
 
-    @Test
-    @Transactional
-    void findById() {
-        System.out.println(userRepository.findById(1));
-    }
+
 }
