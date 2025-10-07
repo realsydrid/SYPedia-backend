@@ -1,9 +1,9 @@
-package com.isy.practice1.service;
+package com.isy.sypedia.service;
 
-import com.isy.practice1.dto.SignupRequestDTO;
-import com.isy.practice1.dto.UserResponseDTO;
-import com.isy.practice1.entity.User;
-import com.isy.practice1.repository.UserRepository;
+import com.isy.sypedia.dto.SignupRequestDTO;
+import com.isy.sypedia.dto.UserResponseDTO;
+import com.isy.sypedia.entity.User;
+import com.isy.sypedia.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

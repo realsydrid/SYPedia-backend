@@ -1,8 +1,8 @@
-package com.isy.practice1.controller;
+package com.isy.sypedia.controller;
 
-import com.isy.practice1.dto.SignupRequestDTO;
-import com.isy.practice1.dto.UserResponseDTO;
-import com.isy.practice1.service.UserService;
+import com.isy.sypedia.dto.SignupRequestDTO;
+import com.isy.sypedia.dto.UserResponseDTO;
+import com.isy.sypedia.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

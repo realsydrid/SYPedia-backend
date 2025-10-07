@@ -1,4 +1,4 @@
-package com.isy.practice1;
+package com.isy.sypedia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-public class Practice1Application {
+public class SypediaBackendApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Practice1Application.class, args);
+        SpringApplication.run(SypediaBackendApplication.class, args);
     }
 
 }

@@ -1,8 +1,8 @@
-package com.isy.practice1.controller;
+package com.isy.sypedia.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.isy.practice1.dto.SignupRequestDTO;
-import com.isy.practice1.repository.UserRepository;
+import com.isy.sypedia.dto.SignupRequestDTO;
+import com.isy.sypedia.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -11,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;

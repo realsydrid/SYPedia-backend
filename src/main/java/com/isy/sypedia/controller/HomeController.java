@@ -1,4 +1,4 @@
-package com.isy.practice1.controller;
+package com.isy.sypedia.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

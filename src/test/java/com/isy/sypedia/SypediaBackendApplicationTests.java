@@ -1,10 +1,10 @@
-package com.isy.practice1;
+package com.isy.sypedia;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Practice1ApplicationTests {
+class SypediaBackendApplicationTests {
 
     @Test
     void contextLoads() {

@@ -1,4 +1,4 @@
-package com.isy.practice1.dto;
+package com.isy.sypedia.dto;
 
 import lombok.*;
 
