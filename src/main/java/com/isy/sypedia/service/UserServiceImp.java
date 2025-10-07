@@ -1,5 +1,6 @@
 package com.isy.sypedia.service;
 
+import com.isy.sypedia.dto.LoginRequestDTO;
 import com.isy.sypedia.dto.SignupRequestDTO;
 import com.isy.sypedia.dto.UserResponseDTO;
 import com.isy.sypedia.entity.User;
@@ -31,5 +32,10 @@ public class UserServiceImp implements UserService {
                 .createdAt(saved.getCreatedAt())
                 .build();
 
+    }
+
+    @Override
+    public UserResponseDTO login(LoginRequestDTO dto) {
+        return null;
     }
 }

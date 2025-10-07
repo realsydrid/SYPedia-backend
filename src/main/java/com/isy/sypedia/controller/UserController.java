@@ -1,5 +1,6 @@
 package com.isy.sypedia.controller;
 
+import com.isy.sypedia.dto.LoginRequestDTO;
 import com.isy.sypedia.dto.SignupRequestDTO;
 import com.isy.sypedia.dto.UserResponseDTO;
 import com.isy.sypedia.service.UserService;
@@ -23,4 +24,11 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    @PostMapping("login")
+    public ResponseEntity<?> login(@RequestBody LoginRequestDTO dto) {
+        UserResponseDTO responseDTO = userService.login(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(null);
+    }
 }
+
+
