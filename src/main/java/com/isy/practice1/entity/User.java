@@ -1,21 +1,23 @@
 package com.isy.practice1.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.Instant;
 
-@Getter
-@Setter
 @Entity
+@EntityListeners(AuditingEntityListener.class)
+@Getter @Builder
+@NoArgsConstructor @AllArgsConstructor
 @Table(name = "users", schema = "practice1")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_no", nullable = false)
-    private Integer id;
+    private Integer userNo;
 
     @Column(name = "user_id", nullable = false, length = 30)
     private String userId;
@@ -23,8 +25,8 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @ColumnDefault("CURRENT_TIMESTAMP")
-    @Column(name = "created_at", nullable = false)
+    @CreatedDate
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
 }
