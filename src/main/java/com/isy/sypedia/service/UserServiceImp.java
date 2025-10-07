@@ -6,6 +6,7 @@ import com.isy.sypedia.dto.UserResponseDTO;
 import com.isy.sypedia.entity.User;
 import com.isy.sypedia.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @AllArgsConstructor
 public class UserServiceImp implements UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Override
     @Transactional
@@ -36,6 +37,20 @@ public class UserServiceImp implements UserService {
 
     @Override
     public UserResponseDTO login(LoginRequestDTO dto) {
-        return null;
+
+        String reqUserId = dto.getUserId();
+        String reqPassword = dto.getPassword();
+        User user = userRepository.findByUserId(reqUserId)
+                .orElseThrow(()->new IllegalArgumentException("아이디가 존재하지 않습니다."));
+
+        if(!user.getPassword().equals(reqPassword)){
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
+        }
+        return UserResponseDTO .builder()
+                .userNo(user.getUserNo())
+                .userId(user.getUserId())
+                .createdAt(user.getCreatedAt())
+                .build();
+
     }
 }
