@@ -5,8 +5,8 @@ import com.isy.sypedia.dto.SignupRequestDTO;
 import com.isy.sypedia.dto.UserResponseDTO;
 import com.isy.sypedia.entity.User;
 import com.isy.sypedia.repository.UserRepository;
+import com.isy.sypedia.security.JwtUtil;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImp implements UserService {
 
     private final UserRepository userRepository;
+    private final JwtUtil jwtUtil;
 
     @Override
     @Transactional
@@ -36,7 +37,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public UserResponseDTO login(LoginRequestDTO dto) {
+    public String login(LoginRequestDTO dto) {
 
         String reqUserId = dto.getUserId();
         String reqPassword = dto.getPassword();
@@ -46,11 +47,8 @@ public class UserServiceImp implements UserService {
         if(!user.getPassword().equals(reqPassword)){
             throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
-        return UserResponseDTO .builder()
-                .userNo(user.getUserNo())
-                .userId(user.getUserId())
-                .createdAt(user.getCreatedAt())
-                .build();
+
+        return jwtUtil.generateToken(String.valueOf(user.getUserNo()));
 
     }
 }

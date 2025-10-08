@@ -6,6 +6,6 @@ import com.isy.sypedia.dto.UserResponseDTO;
 
 public interface UserService {
     UserResponseDTO register(SignupRequestDTO dto);
-    UserResponseDTO login(LoginRequestDTO dto);
+    String login(LoginRequestDTO dto);
 
 }
